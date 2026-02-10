@@ -4,6 +4,8 @@ This project implements an automated quantitative analysis pipeline in R for the
 
 The primary objective is to evaluate historical performance, volatility, and correlation of key banking (Santander, BBVA) and insurance (Mapfre) assets against their benchmark, utilizing real-time market data.
 
+![](attachments/Pasted%20image%2020260210022112.png)
+
 ## 🚀 Key Features
 
 - **Automated ETL Pipeline:** Custom script designed to ingest historical OHLCV data from Yahoo Finance, bypassing legacy API limitations.
@@ -59,19 +61,22 @@ The project follows a modular architecture to ensure scalability:
 
 Adjusted close prices were normalized to compare the cumulative evolution of BBVA, Santander, and Mapfre against the IBEX 35 benchmark.
 
-*[Insert your line chart screenshot here]*
+![](attachments/Pasted%20image%2020260210022112.png)
 
 **Insight:** The analysis highlights a significant divergence in the banking sector (particularly BBVA) relative to the index in the recent period, outperforming the benchmark.
 
 ### 2. Correlation & Beta Analysis
 
 Analyzed the relationship between daily asset returns and market returns using Scatter Plots and Linear Regression.
+![](attachments/Pasted%20image%2020260210022257.png)
 
-*[Insert your scatter plot screenshot here]*
+- **Santander vs. IBEX:** Exhibits a strong positive linear correlation (0.87) with a regression slope beta greater than 1. This indicates the asset acts as a high-beta stock, amplifying systematic market volatility.
 
-- **Santander vs. IBEX:** Exhibits a strong positive linear correlation (\(R \approx 0.8+\)) with a regression slope (\(\beta\)) greater than 1. This indicates the asset acts as a high-beta stock, amplifying systematic market volatility.
+![](attachments/Pasted%20image%2020260210022145.png)
+
 - **Mapfre vs. IBEX:** Shows higher dispersion, indicating idiosyncratic risk factors independent of the systematic market trend.
 
+![](attachments/Pasted%20image%2020260210022208.png)
 ## 🔧 Technical Challenge: API Deprecation
 
 A key engineering challenge was the obsolescence of the original data extraction functions (`yahoo.readbydate`), which relied on deprecated Yahoo Finance endpoints.
